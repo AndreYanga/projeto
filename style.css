@@ -32,6 +32,7 @@
 body {
   /*  background: color image repeat position/ size*/
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
 }
 /* body inteiro selector universal vai aplicar em todos elementos do body*/
 body * {
@@ -40,8 +41,8 @@ body * {
 }
 
 #container {
-  width: 100%;
-  max-width: 588px;
+  width: 100%; /*adaptamos para qualquer dispositivo*/
+  max-width: 588px; /*o maximo da tela do dispositivo maior*/
   margin: 56px auto 0px;
   padding: 0 24px;
 }
@@ -84,7 +85,7 @@ body * {
   transform: translateY(-50%);
 }
 
-.light #switch button{
+.light #switch button {
   right: 0;
   left: initial;
 }
@@ -160,4 +161,16 @@ footer {
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
+}
+
+/* media quries*/
+/*na sua largura minima de 700 px para adiciona */
+/*adaptar para qualquer dispositivo*/
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
 }
